@@ -4,6 +4,7 @@
 body{
     font-family: Verdana, sans-serif;
     margin: 0;
+    background-image: url(../assets/images/bg.jpg);
 }
 
 header h1{
@@ -143,6 +144,44 @@ img{
 /* .flex-item a#my-special-id{
     background-image: url(../assets/images/custom-image-name.jpeg); 
 } */
+
+
+.flex-item a:hover{
+    color:#bbbbbb;
+    background-size: 120%;
+}
+
+.flex-item h4{
+   margin:10px;
+   background-color: white;
+   padding:5px 10px;
+}
+
+
+.flex-item a#a1{
+    background-image: url(../assets/images/a1.png); 
+}
+
+.flex-item a#r1{
+    background-image: url(../assets/images/r1.png); 
+}
+
+.flex-item a#b2{
+    background-image: url(../assets/images/b2.png); 
+}
+
+.flex-item a#b3{
+    background-image: url(../assets/images/aaa.png); 
+}
+
+.flex-item a#b4{
+    background-image: url(../assets/images/b4.png); 
+}
+
+
+.flex-item a#p1{
+    background-image: url(../assets/images/p1.png); 
+}
 
 
 .flex-item a:hover{
