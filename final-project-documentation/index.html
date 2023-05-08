@@ -19,9 +19,9 @@
         </nav>
         <header class="documentation-header">
             <section class="center-text">
-                <h1>Work Title</h1>
-                <h2>by Your Name</h6>
-                <p>Write a one-sentence summary of what the project is.</p> 
+                <h1>Good morning</h1>
+                <h2>by Siming Wang</h6>
+                <p>A speech-activated weather reporter."Good morning".</p> 
             </section>
         </header>
 
@@ -33,16 +33,20 @@
             </section>
             <section>
                 <h3>Introduction</h3>
-                <p>Write a short introduction, a short paragraph, giving a bit more detail about what the project is.</p>
+                <p>A weather forecasting machine triggered by recognition of speech.</p>
             </section>
             <section>
                 <h3>Concept and Background Research</h3>
                 
-                <p>Write about the concept behind the project, in other words the creative or theoretical inspiration. Include details about any background research you may have done (don’t forget to include references in the reference section).</p>
-                <p>Consider writing about your work in relation to a creative, theoretical or computational tradition that you may be taking inspiration from, in other words think about how your work is situated in a particular making tradition. </p>
+                <p>This project is mainly inspired by “World Wind Radio”(https://www.creativeapplications.net/member-submissions/world-wind-radio/). This project detects the direction of the wind and broadcasts the local broadcast of the place where the wind blows. The project aims to call for a connection between people from different countries, which is very touching to me.</p>
+                <p>In order to achieve this goal, I studied the its principle. It first detects the wind direction through arduino, then selects the area where the wind blows in a map, triggering online broadcasting through the music player Deamon, and finally displays the location, country and broadcasting on the LCD screen.
+
+                    Combined with another project “Buttons[2]”(A camera that only takes pictures of people's cameras nearby). Combined with another project, I came up with the original vision for my project. I want to make a small device that  that can send voice(and transferred to text) to strangers. Of course, to make it more interesting, the two people who receive and send are determined according to the direction of the wind, making this project more poetic, that is, "the wind blows information on where to come.”
+                    
+                    So the whole project involves the use of arduino, Api (weather information), p5 serial communication and server. </p>
                 
                 <!-- if you have a full width image try make it not too tall -->
-                <img src="../assets/images/repeating-diagonal-lines-strip.jpeg"/>
+                <img src="../assets/images/show.jpg"/>
                 
             </section>
             <section>
@@ -51,30 +55,42 @@
                 <!-- example of styling for three images, you can write your own styling -->
                 <div class="flex-container flex-basis-third">
                     <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-square.jpeg"/>
+                        <img src="../assets/images/pp1.png"/>
                     </div>
                     <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-square.jpeg"/>
+                        <img src="../assets/images/pp2.png"/>
                     </div>
                     <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-square.jpeg"/>
+                        <img src="../assets/images/pp3.png"/>
                     </div>
                 </div>
                 
-                <p>Write about the process of implementing your project. What technical elements or hardware are involved in your system. Write about why you made certain technical or design decisions etc. </p>
+                <p>I have divided this project into several parts:
+
+                    First I implemented the API connection in p5.js, no additional library is included in this step.
+
+                    Second, I combined it with the speech recognition code, which requires the p5.speech.js library, but thanks to shiffman's source code, I modified it a bit and combined it with the code for getting the API, so getting the api is useful Detected that I said "triggered by Good morning".
+
+                    Third, I run a serialport server, first in the terminal npm install, then node startserver.js.
+                    In this step, I first made a demo. When I click on the screen, the small light will be on, which proves that the signal can be transmitted from p5.js to arduino(must work with the server running!).
+                    In arduino, the LED light is controlled by the high and low signal from p5.js.
+
+                    Finally,just change the code in arduino as output with a PCB library “Adafruit_Thermal Printer Library”. Create an if conditional judgment to control whether to print.
+                    
+                    Tips:must with a 9V battery to use the printer </p>
             
                 <!-- example of styling for three images, you can write your own styling -->
                 <div class="flex-container flex-basis-half">
                     <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-rect.jpeg"/>
+                        <img src="../assets/images/pp4.png"/>
                     </div>
                     <div class="flex-item">
-                        <img src="../assets/images/repeating-diagonal-lines-rect.jpeg"/>
+                        <img src="../assets/images/pp5.png"/>
                     </div>
                 </div>
 
                 <!-- default flex item is for 4 & follows media query styling for home page -->
-                <div class="flex-container">
+                <!-- <div class="flex-container">
                     <div class="flex-item">
                         <img src="../assets/images/repeating-diagonal-lines-rect.jpeg"/>
                     </div>
@@ -87,18 +103,34 @@
                     <div class="flex-item">
                         <img src="../assets/images/repeating-diagonal-lines-rect.jpeg"/>
                     </div>
-                </div>
+                </div> -->
          
             </section>
             <section>
                 <h3>Reflection and Future Development</h3>
-                <p>Reflect on how the project went, what went well, what you learnt etc. Based on these reflections, conclude with how you would further develop this project if you were to make another version or how you would further develop your ideas.</p>
+                <p>The serial connection is stable,but at this stage it also relies on local server for signaling. 
+
+                    Out of my love for traveling alone, my ultimate goal is definitely to hope that it can become a portable device which users can take it out, and then say hello or send messages to strangers in the direction of the wind, maybe at that time this title of project might be more poetic. After all, my project was originally set up based on emotional connection. Of course, this idea may need to design the app interface of the mobile phone or realize it through the wifi module.
+                    
+                    In order to make it more convenient to carry, I will use arduino nano to replace uno in the future, and make a smaller package to cover arduino components. I think the problem of server can be solved by the built-in microphone of the mobile phone, but after all, I hope that my works can involve the use of mobile phone screens as little as possible (when traveling)
+                    I like the form of thermal printers very much. I prefer to record texts rather than photos. I believe some people will resonate with me.
+                    
+                    Finally, it should be mentioned that my API-key is a one-month subscription right.</p>
             </section>
             <section>
                 <h3>References</h3>
                 <ul>
-                    <li>Technical Reference example. Include link where possible.</li>
-                    <li>Conceptual Reference example. Include link where possible.</li>
+                    <li>Technical Reference example:
+                        1.serialport server:-Montoyamoraga 
+                        https://github.com/p5-serial/p5.serialcontrol/releases/tag/0.1.2
+                        Tutorial for this:https://www.youtube.com/watch?v=6LkqhQ1-vJc
+                        2.speech recognizaiton-daniel shiffman
+                        https://github.com/CodingTrain/website-archive/tree/main/Courses/programming_with_text/session10/10-04_Speech_Recognition_with_p5.Speech
+                        3.Adafruit_Thermal Printer Library- In arduino library manager</li>
+                    <li>Conceptual Reference example:
+                        1.https://www.creativeapplications.net/member-submissions/world-wind-radio/
+                        2.https://www.creativeapplications.net/processing/buttons-processing-objects/
+                    </li>
                 </ul>
             </section>
         </main>

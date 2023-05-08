@@ -170,6 +170,10 @@ img{
     background-image: url(../assets/images/p1.png); 
 }
 
+.flex-item a#w8{
+    background-image: url(../assets/images/w8.png); 
+}
+
 
 .flex-item a:hover{
     color:#bbbbbb;
